@@ -1,158 +1,102 @@
-# AzureFrontierGirls-AI-Challenge
-Build Your First Copilot Challenge (Foundry Edition)
+# Azure Frontier Girls Challenge
+## Objetivo e descrição
+Este challenge tem como ideia principal criação de um agente para automação de envio de e-mails como lembretes de eventos. O diferencial é fazer esse agente ter uma abordagem similar ao do robô Baymax, do filme "Operação Big Hero", mostrando um pouco de informalidade, gentileza e dediação. Em adição foi implementada a informação sobre o tempo da cidade requisitada, para informar ao usuário e dar dicas, caso necessário, para como agir de acordo com o tempo. Uma melhor descrição do que foi inserido será dada ao decorrer dos **passos**, bem como os **prints de respostas**, incluindo também um **vídeo** ao final, mostrando a **execução do agente** em tempo real e seus resultados.
+## Fluxo
+O fluxo do agente está de acordo com as **imagens** mostradas a seguir e tem o seguinte curso:  
+1. O chat faz a chamada para o agente;
+2. O agente usa o Outlook e escreve parte do e-mail;
+3. Para que as informações sejam preenchidas o agente as lê no arquivo enviado;
+4. O agente, então, solicita as informações de tempo para aquela cidade em específico;
+5. Com as informações completas, o e-mail é finalizado e o agente o envia;
+6. A resposta é enviada ao chat através do agente, com o resultado do envio e o resumo do que foi enviado.  
 
+Nos **prints** abaixo também estão os *inputs* e *outputs*, bem como o *metadata*.
+![alt text](image-24.png)
+![print fluxo 1](image-22.png)
+![print fluxo 2 metadata](image-23.png)
 
-# Introdução
+>## Passos
+>Para a execução do objetivo foram seguidos os seguintes **passos**:
+## Passo 1
+Fork do Challenge no Github
+![print do fork](image-1.png)
 
-Desafio do Azure Frontier Girls de AI Foundry.  
+## Passo 2
+Criação da conta da Azure, na localização "Canada East"
+![print conta azure](image-2.png)
 
----  
+## Passo 3
+Criação do grupo de recursos 
+![print resource group](image-3.png)
 
-# 🏅 Regras Oficiais — Seleção para Voucher de Certificação AZ-900
+## Passo 4
+Criação do AI Foundry
+![print ai foundry](image-4.png)
 
-## Azure Frontier Girls – Build Your First Copilot Challenge (Foundry Edition)
+## Passo 5
+Passar o plano para pay-as-you-go.
+##### Obs: houve uma dificuldade neste passo que foi resolvida através de revisão de aulas gravadas e consultas no grupo do curso, até então foi a parte de mais dificulade.
+![print pay-as-you-go](image-6.png)
 
+## Passo 6
+Implantação do modelo, utilizando o gpt4.1, na localização "Canada East"
+![print gpt4.1](image-5.png)
 
----  
+## Passo 7
+Criando e instruindo o agente. Nesta seção foi criado o agente e definido qual seriam seus objetivos e ações a serem tomadas. Nesta etapa foram definidas as seguintes intruções:  
+>Você é um Agente de envio de e-mails de lembretes de eventos. Você envia e-mails como se fosse o robô Baymax, do filme Operação Big Hero, para lembrar ao usuário que ele possui algo agendado para um horário próximo ao atual. Você não responde perguntas sobre qualquer outro assunto. Você envia e-mail somente sobre lembretes.
 
-### 🎯 Objetivo
+e a seguinte descrição do agente:
+>Envia e-mails de lembretes de eventos como se fosse o Baymax, do filme Operação Big Hero.
+![print criacao agente](image-8.png)
 
-Reconhecer e premiar as participantes que concluírem o programa com excelência técnica, engajamento e consistência, oferecendo **vouchers gratuitos de certificação Microsoft AZ-900**.
+## Passo 8
+Teste funcional do agente no playground. Foi feito um teste com o agente antes de enviar um e-mail, para checar se o conteúdo e linguagem estavam de acordo com a proposta inicial.
+![print teste baymax](image-7.png)
+![print teste baymax 2](image-9.png)
 
----  
+## Passo 9
+Um e-mail para o agente foi criado, com uma assinatura do Office 365 outlook.
+![print outlook](image-11.png)
 
-### 🧩 Critérios de Avaliação e Pontuação
+## Passo 10
+Foi adicionada uma ação para que o e-mail seja enviado de um e-mail válido, usando os recursos disponíveis.
+![print acao agente](image-10.png)
 
-As candidatas serão avaliadas em **cinco eixos principais**, que somam **100 pontos**.  
-A pontuação será registrada em **planilha oficial** (monitorada pela equipe organizadora) e servirá como base para o ranking final de elegibilidade.
+## Passo 11
+Ao adicionar a ação, mais testes foram enviados para verificar se o agente estava concluindo suas tarefas com êxito. Os testes foram bem sucedidos.
+![print acao agente](image-12.png)
+![print acao email](image-13.png)
 
-| **_Eixo_**                              | **_Descrição_**                                                                           | **_Peso_**  |
-| --------------------------------------- | ----------------------------------------------------------------------------------------- | --------- |
-| 1. Participação e Presença nas Aulas    | Participação ativa nas sessões ao vivo e presença confirmada (mínimo 75%).                | 20 pontos |
-| 2. Desempenho em Quizzes                | Média de acertos nos quizzes semanais aplicados via Forms (mínimo 60% de aproveitamento). | 10 pontos |
-| 3. Entrega Técnica (Definition of Done) | Entrega completa do desafio no GitHub, com todos os requisitos mínimos cumpridos.         | 40 pontos |
-| 4. Documentação e Clareza (README)      | Organização, prints, explicação da solução e registro do fluxo de execução.               | 20 pontos |
+## Passo 12
+Uma lista de pessoas com nomes, e-mail e eventos fictícios foi criada, com a ajuda do ChatGPT. Uma linha com informações válidas foi adicionada para fins de testes de agente.
+![print lista](image-14.png)
 
----  
+## Passo 13
+O arquivo contendo a lista de pessoas fictícias foi adicionado a parte de "Conhecimento", para agregar o agente.
+![print conhecimento](image-15.png)
 
-### ✅ Requisitos para Elegibilidade
+## Passo 14
+Mais testes foram feitos com o agente para testar novamente se tudo estava de acordo. Os e-mails foram enviados com as informações corretas.
+![print teste conhecimento](image-16.png)
+![print e-mail conhecimento](image-17.png)
 
-O repositório da participante deve conter:
+## Passo 15
+Foi adicionada uma ação para alertar como estará o tempo, caso necessário, na cidade da pessoa e ajudá-la com dicas para se previnir.
+![print tempo acao](image-18.png)
 
-- **Repositório público no GitHub** com nome do agente
-- **README completo**, incluindo:
-    - Descrição do projeto e objetivo do agente
-    - Prints de respostas, fluxo e execução
-    - Links de referências (Foundry, Power Automate, etc.)
-- **Agente funcional no Foundry**, com:
-    - Pelo menos **1 ação funcional** (ex.: cálculo, busca ou automação simples)
-- **Entrega dentro do prazo**
-    - Prazo para entrega **21/11/2025 às 23:59**.  
-- **TEMA:** LIVRE, DESDE QUE SIGA OS PRE-REQUISITOS.  
-- **GRUPO OU INDIVIDUAL:** ERRATA: Numa das aulas anteriores havia sido falado sobre a possibilidade de realizar em grupo o projeto. O projeto TEM DE SER ENTREGUE INDIVIDUAL, vocês podem se juntar em grupo mas para entregar tem de ser individual.  
-- **SOBRE A ENTREGA:** Tem de ser em um repositorio do github contendo o roteiro:  
-  - Sendo OBRIGATÓRIO o passo a passo descrito e os prints de como foi feito. De preferência em markdown, mas pode ter um PDF também. Mas Lembre-se que o Readme é Obrigatório!      
-  - OPCIONAL: Um vídeo contendo o passo a passo. 
----  
+## Passo 16
+Com a nova implantação, mais teste foram executados para verificar se o agente correspondia ao esperado e se a adição de mais uma ação não havia interferido negativamente nos resultados. Novamente o agente enviou as informações corretamente.
+![print teste tempo](image-19.png)
+![print email tempo](image-20.png)
 
-### 📊 Cálculo Final e Ranking
-
-A nota final será calculada automaticamente conforme a fórmula:
-
-    Pontuação Final = (Presença x 0,2) + (Quiz x 0,1) + (DoD Técnico x 0,4) + (README x 0,2) + (Criatividade x 0,1)
-
-#### 📈 Classificação:
-
-- **≥ 80 pontos:** Elegível ao voucher AZ-900
-- **60–79 pontos:** Conclusão sem premiação + certificado de conclusão
-
-**Critérios de desempate:**
-
-1.  Maior presença geral
-2.  Maior clareza técnica no README
-3.  Data de submissão mais próxima do prazo (prioriza quem entregou antes)
-
----  
-
-### 🧮 Como será feito o controle
-
-- **Presença:** monitorada via formulário de check-in ao vivo (Forms)
-- **Quizzes:** lançados ao final de cada submódulo (Forms)
-- **Entrega técnica:** validada pela equipe do Challenge (planilha central)
-- **Ranking final:** publicado após conferência
-
----  
-
-
-## Cronograma
-
-> Observação: Embora a idéia seja passar por estes temas nestas datas, pode ser que o conteudo todo ou seja adiantado ou atrasado devido a profundidade do que for passado.  
-
-
-| Data | Dia | Atividade | Material de Referência |
-|------|-----|-----------|------------------------|
-| 06/11 | Quinta-feira | Build Your First Copilot Challenge (Foundry Edition) - Aula e explicação do challenge | [Readme](./README.md) e [Aula 1](./Aula%201/Azure_AI_Foundry.md) |
-| 10/11 | Segunda-feira | Build Your First Copilot Challenge (Foundry Edition) - Hands-on | [AI Foundry](./Aula%201/Azure_AI_Foundry.md) |
-| 12/11 | Quarta-feira | Build Your First Copilot Challenge (Foundry Edition) - Hands-on | [AI Agents](./Aula%202/AI_Agent_Services.md) |
-| 18/11 | Terça-Feira | Build Your First Copilot Challenge (Foundry Edition) - Hands-on e tira dúvidas e sorteio das 5 que irão apresentar | [Microsoft Agent Framework](./Aula%203/Agent_Framework.md) |
-
-
-### FAQ
-- Prints a partir de qual etapa? Somente quando for criar o agente por exemplo?
-  A partir da criação dos agentes.  
-- O print seria do passo a passo?
-  Sim.  
-- Tenho uma dúvida: é necessário fazer uma versão do agente em código?
-  Não pode ser somente no portal, via código é opcional.  
-- Dúvida sobre o challeng, após entregar, podemos apagar todos os recursos? Pra garantir que não cobre nada?  
-  Não só pode como deve, justamente para não gerar custos.  
-- Escrever ou fazer vídeo no Readme?  
-  Pode escrever no readme, em qualque app e salvar em pdf também, ou em outro arquivo markdown, e embedar o video no readme do repo.  
-- Serão sorteadas para apresentação 5 pessoas. Confere?
-  Isso 5 pessoas.
-- Onde subimos o vídeo?
-  Pode ser no youtube, drive(onedrive, googledrive, box) onde desejar. Só colocar o link no readme ou no arquivo com o passo a passo.  
-
-
-## Pré-Requisitos
-
-### Obrigatórios
-- [Crie a conta da Azure](https://github.com/AZFRONTIERGIRLS/AZFrontierGirls-Duvidas/discussions/15)  
-- [Criar conta no GitHub](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E&source=header)  
-
-
-### Opcionais
-- [Instalar o Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)  
-- [Instalar o Python](https://www.python.org/downloads/)  
-- [Instalar o UV](https://docs.astral.sh/uv/getting-started/installation/)  
-
-## Conteudo
-Os conteudos sobre o challenge se dividirão em três partes, com 4 encontros onde o ultimo será o de entrega e apresentação dos challenges.  
-
-As aulas 1 e 2 serão feitas na interface do AI Foundry, não necessitando de código (programação).  
-
-A aula 3 será necessário o uso de Python para programar, portanto é importante que use um computador com acesso a internet e tenha o python instalado.  
-
-> Outra possibilidade é o uso do github [codespaces](https://github.com/features/codespaces), este recurso permite que o usuario crie uma maquina virtual conteinerizada e execute os códigos dentro dela. Ele possui um tier free mensal de 60 horas.  
-
-## Aulas  
-
-1. [Aula 1 - Visão geral do AI Foundry](./Aula%201/Azure_AI_Foundry.md)
-2. [Aula 2 - Visão geral de Agentes no AI Foundry](./Aula%202/AI_Agent_Services.md)
-3. [Aula 3 - Visão geral do Microsoft Agent Framework](./Aula%203/Agent_Framework.md)
-
-## Indicações de materiais
-
-- [What is Azure AI Foundry?](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry)  
-- [AI Foundry Newsletter - By Bruno Malhano](https://www.linkedin.com/pulse/microsoft-agent-framework-major-azure-ai-foundry-updates-malhano-2knnf/)  
-- [What is Azure AI Foundry Agent Service?](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview)  
-
+## Vídeo
+O vídeo a seguir tem como propósito demonstrar o agente em ação, executando aquilo que foi solicitado e, de acordo com a ideia e objetivo proposto, enviando para o remetente requerido as informações necessárias para lembrar-lhe do evento que ocorrerá, o dia em que ocorrerá e ainda uma informação a mais para dar dicas sobre o tempo na cidade previsto para o dia em questão.  
+###### (Clique na imagem para redirecionar ao vídeo)
+[![video agente challenge](image-21.png)](https://youtu.be/6G2CTT74gDA)
 
 ## Referências
-
-- [Artificial Intelligence for Beginners - A Curriculum](https://microsoft.github.io/AI-For-Beginners/)
-- [Generative AI for Beginners (Version 3) - A Course](https://microsoft.github.io/generative-ai-for-beginners/#/)
-- [AI Agents for Begineers Repository](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [MCP for Beginners Repository](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Discord do AI Foundry](https://aka.ms/foundry/discord)
-- [Regioes dos modelos](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/concepts/model-region-support?tabs=global-standard)
+* https://github.com/Miyake-Diogo/AzureFrontierGirls-AI-Challenge/blob/main/README.md
+* https://tinyurl.com/azuremicrosoftafgchallenge
+* https://ai.azure.com
+* https://excalidraw.com
